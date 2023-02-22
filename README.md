@@ -32,9 +32,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Awesome Books] <a name="about-project"></a>
+# 📖 [Todo List App] <a name="about-project"></a>
 
-**[Todo List App]** is a solo project. Created using HTML, CSS and Javascript.
+**[Todo List App]** is an app Created using HTML, CSS and Javascript.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,7 +50,7 @@
 <details>
   <summary>Server</summary>
   <ul>
-    <li></li>
+    <li>Webpack</li>
   </ul>
 </details>
 
@@ -90,7 +90,7 @@ In order to run this project you need: any web-browser.
 
 ### Setup
 
-Clone this [repository](https://github.com/jeanbuhendwa/awesome-book2) to your desired folder.
+Clone this [repository](https://github.com/jeanbuhendwa/todo-list) to your desired folder.
 
 ### Install
 
@@ -125,7 +125,7 @@ You can deploy this project using: Project is incomplete.
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Support any device resolution]**
-- [ ] **[Navigation bar]**
+- [ ] **[Add and remove Item]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
