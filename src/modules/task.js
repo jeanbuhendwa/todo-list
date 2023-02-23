@@ -1,4 +1,3 @@
-// const resetBtn = document.getElementById('reset-all');
 const taskInput = document.getElementById('input-task');
 const taskList = document.getElementById('task-list');
 const addBtn = document.getElementById('enter-task');
@@ -138,7 +137,3 @@ taskList.addEventListener('click', (event) => {
 addBtn.addEventListener('click', () => {
   addTask();
 });
-
-// resetBtn.addEventListener("click", () => {
-//   localStorage.clear();
-// });
