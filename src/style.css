@@ -8,6 +8,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.line-through {
+  text-decoration: line-through;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -56,10 +60,6 @@ body {
   cursor: pointer;
 }
 
-#error-message {
-  display: none;
-}
-
 .task-list {
   list-style: none;
   padding: 10px;
@@ -75,11 +75,44 @@ body {
   border-bottom: 1px solid rgb(229, 229, 229);
 }
 
-#drag-btn {
+.in-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.text-todo {
+  color: gray;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+}
+
+#edit-todo {
+  border: none;
+  background: none;
+  font-size: 18px;
+  color: gray;
+  cursor: pointer;
+  padding: 0;
+}
+
+#del-btn {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   color: rgb(101, 101, 101);
+  padding: 0;
+}
+
+.disable {
+  display: none;
 }
 
 .clear-task {
