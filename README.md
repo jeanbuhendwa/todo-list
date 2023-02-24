@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h1><b>Todo List App</b></h1>
+  <h1><b>To Do List</b></h1>
 
 </div>
 
@@ -32,9 +32,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Todo List App] <a name="about-project"></a>
+# 📖 [To Do List] <a name="about-project"></a>
 
-**[Todo List App]** is an app Created using HTML, CSS and Javascript.
+**[To Do List]** is created using html, css, js and webpack.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,21 +43,23 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li>HTML, CSS, Javascript and WebPack</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>Webpack</li>
+    <li>N/A</li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li></li>
+    <li>N/A</li>
   </ul>
 </details>
 
@@ -98,7 +100,11 @@ This project does not require installation.
 
 ### Usage
 
-To run the project, open index.html in any web browser.
+**To run the project follow the following instruction:-**
+
+- Clone this [repository](https://github.com/jeanbuhendwa/todo-list) in your local machine with correct branch.
+- Terminal:- **npm run build** it will create **dist** folder. In that folder you have open index.html in any browser.
+- **or** Terminal:- **npm start** it will run on port 8080.
 
 ### Run tests
 
@@ -112,11 +118,11 @@ You can deploy this project using: Project is incomplete.
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
-👤 **Jean Jacques Buhendwa**
+👤 **John Buhendwa**
 
-- GitHub: [@jeanbuhendwa]
+- GitHub: [@jeanbuhendwa](https://github.com/jeanbuhendwa)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,7 +131,8 @@ You can deploy this project using: Project is incomplete.
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Support any device resolution]**
-- [ ] **[Add and remove Item]**
+- [ ] **[CRUD functionality]**
+- [ ] **[Complete task check]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,7 +150,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project leave a ⭐️.
+If you like this project give a ⭐️.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,7 +168,7 @@ I would like to thank Microverse.
 
 - **[Can I use this project for my website?]**
 
-  - [It's GNU license, feel free to use as you like.]
+  - [It's MIT license, feel free to use as you like.]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,6 +176,6 @@ I would like to thank Microverse.
 
 ## 📝 License <a name="license"></a>
 
-This project is [GNU](./LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
