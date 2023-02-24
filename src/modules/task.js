@@ -88,7 +88,7 @@ taskList.addEventListener('click', (event) => {
   const element = event.target;
   const elementJob = element.attributes.job.value;
   if (elementJob === 'complete') {
-    completeTask(element);
+    listArr = completeTask(element, listArr);
   } else if (elementJob === 'delete') {
     removeTask(element);
   } else if (elementJob === 'edit') {
@@ -146,5 +146,3 @@ const clearAll = document.getElementById('reset-all');
 clearAll.addEventListener('click', () => {
   localStorage.clear();
 });
-
-export default listArr;
