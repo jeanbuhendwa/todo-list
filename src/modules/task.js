@@ -1,3 +1,6 @@
+import completeTask from './taskStatus.js';
+import clearDoneTask from './doneTask.js';
+
 const taskInput = document.getElementById('input-task');
 const taskList = document.getElementById('task-list');
 const addBtn = document.getElementById('enter-task');
@@ -47,7 +50,6 @@ if (storedData) {
 const addTask = () => {
   const todoTask = taskInput.value;
   if (todoTask) {
-    // addTodo(todoTask, id, false);
     listArr.push({
       id: listArr.length,
       name: todoTask,
@@ -64,14 +66,6 @@ taskInput.addEventListener('keypress', (event) => {
     addTask();
   }
 });
-
-const completeTask = (element) => {
-  element.classList.toggle(check);
-  element.classList.toggle(uncheck);
-  element.parentNode.querySelector('.text-todo').classList.toggle(lineThrough);
-
-  listArr[element.id].done = !listArr[element.id].done;
-};
 
 const updateIndex = () => {
   listArr.forEach((element, index) => {
@@ -94,7 +88,7 @@ taskList.addEventListener('click', (event) => {
   const element = event.target;
   const elementJob = element.attributes.job.value;
   if (elementJob === 'complete') {
-    completeTask(element);
+    listArr = completeTask(element, listArr);
   } else if (elementJob === 'delete') {
     removeTask(element);
   } else if (elementJob === 'edit') {
@@ -136,4 +130,19 @@ taskList.addEventListener('click', (event) => {
 
 addBtn.addEventListener('click', () => {
   addTask();
+});
+
+const clearBtn = document.getElementById('clear-task');
+clearBtn.addEventListener('click', () => {
+  listArr = clearDoneTask(listArr);
+  updateIndex();
+  taskList.innerHTML = '';
+  loadTodo(listArr);
+  localStorage.setItem('Todo', JSON.stringify(listArr));
+});
+
+const clearAll = document.getElementById('reset-all');
+
+clearAll.addEventListener('click', () => {
+  localStorage.clear();
 });
