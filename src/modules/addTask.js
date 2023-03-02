@@ -1,11 +1,11 @@
-const check = "fa-check-square-o";
-const uncheck = "fa-square-o";
-const lineThrough = "line-through";
+const check = 'fa-check-square-o';
+const uncheck = 'fa-square-o';
+const lineThrough = 'line-through';
 
 const addTodo = (todo, id, done) => {
   const taskDone = done ? check : uncheck;
-  const taskLine = done ? lineThrough : "";
-  const taskList = document.getElementById("task-list");
+  const taskLine = done ? lineThrough : '';
+  const taskList = document.getElementById('task-list');
 
   const text = `<li class="task-item">
           <div class="in-text">
@@ -20,7 +20,7 @@ const addTodo = (todo, id, done) => {
           </div>
         </li>`;
 
-  const position = "beforeend";
+  const position = 'beforeend';
   taskList.insertAdjacentHTML(position, text);
 };
 
@@ -32,7 +32,7 @@ const addTask = (todoTask, listArr) => {
       done: false,
     });
     addTodo(todoTask, listArr.length - 1, false);
-    localStorage.setItem("Todo", JSON.stringify(listArr));
+    localStorage.setItem('Todo', JSON.stringify(listArr));
   }
 };
 
@@ -54,4 +54,6 @@ const removeTask = (element, listArr) => {
   loadTodo(listArr);
 };
 
-export { addTask, addTodo, loadTodo, updateIndex, removeTask };
+export {
+  addTask, addTodo, loadTodo, updateIndex, removeTask,
+};
