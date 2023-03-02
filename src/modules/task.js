@@ -1,44 +1,18 @@
 import completeTask from './taskStatus.js';
 import clearDoneTask from './doneTask.js';
+import {
+  addTask,
+  loadTodo,
+  updateIndex,
+  removeTask,
+} from './addTask.js';
 
 const taskInput = document.getElementById('input-task');
 const taskList = document.getElementById('task-list');
 const addBtn = document.getElementById('enter-task');
 
-const check = 'fa-check-square-o';
-const uncheck = 'fa-square-o';
-const lineThrough = 'line-through';
-
 let listArr;
-
 const storedData = localStorage.getItem('Todo');
-
-const addTodo = (todo, id, done) => {
-  const taskDone = done ? check : uncheck;
-  const taskLine = done ? lineThrough : '';
-
-  const text = `<li class="task-item">
-        <div class="in-text">
-            <i class="fa ${taskDone}" job="complete" id="${id}"></i>
-            <span id="description" class="text-todo ${taskLine}" job="">${todo}</span>
-            <input id="update-desc" class="disable" type="text" job="">
-        </div>
-        <div class="btns">
-          <button id="edit-todo"><i class="fa fa-pencil-square-o" aria-hidden="true" job="edit"></i></button>
-          <button id="save-todo" class="disable"><i class="fa fa-floppy-o" aria-hidden="true" job="save"></i></button>
-          <button id="del-btn"><i class="fa fa-trash" aria-hidden="true" id="${id}" job="delete"></i></button>
-        </div>
-      </li>`;
-
-  const position = 'beforeend';
-  taskList.insertAdjacentHTML(position, text);
-};
-
-const loadTodo = (arr) => {
-  arr.forEach((element) => {
-    addTodo(element.name, element.id, element.done);
-  });
-};
 
 if (storedData) {
   listArr = JSON.parse(storedData);
@@ -47,38 +21,13 @@ if (storedData) {
   listArr = [];
 }
 
-const addTask = () => {
-  const todoTask = taskInput.value;
-  if (todoTask) {
-    listArr.push({
-      id: listArr.length,
-      name: todoTask,
-      done: false,
-    });
-    addTodo(todoTask, listArr.length - 1, false);
-    localStorage.setItem('Todo', JSON.stringify(listArr));
-  }
-  taskInput.value = '';
-};
-
 taskInput.addEventListener('keypress', (event) => {
   if (event.keyCode === 13) {
-    addTask();
+    const todoTask = taskInput.value;
+    addTask(todoTask, listArr);
+    taskInput.value = '';
   }
 });
-
-const updateIndex = () => {
-  listArr.forEach((element, index) => {
-    element.id = index;
-  });
-};
-
-const removeTask = (element) => {
-  listArr.splice(element.id, 1);
-  updateIndex();
-  taskList.innerHTML = '';
-  loadTodo(listArr);
-};
 
 const updateTask = (id, value) => {
   listArr[id].name = value;
@@ -90,7 +39,8 @@ taskList.addEventListener('click', (event) => {
   if (elementJob === 'complete') {
     listArr = completeTask(element, listArr);
   } else if (elementJob === 'delete') {
-    removeTask(element);
+    taskList.innerHTML = '';
+    removeTask(element, listArr);
   } else if (elementJob === 'edit') {
     element.parentNode.classList.add('disable');
     element.parentNode.nextElementSibling.classList.remove('disable');
@@ -129,7 +79,8 @@ taskList.addEventListener('click', (event) => {
 });
 
 addBtn.addEventListener('click', () => {
-  addTask();
+  addTask(taskInput.value, listArr);
+  taskInput.value = '';
 });
 
 const clearBtn = document.getElementById('clear-task');
